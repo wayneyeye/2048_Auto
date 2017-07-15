@@ -333,3 +333,11 @@ Full stack:
 1500052440414	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
 1500052442119	Marionette	INFO	Listening on port 44607
 1500052442178	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500052681159	Marionette	INFO	Ceased listening
+1500052682443	Marionette	INFO	Ceased listening
+1500052683752	Marionette	INFO	Ceased listening
+1500124686546	geckodriver	INFO	geckodriver 0.18.0
+1500124686548	geckodriver	INFO	Listening on 127.0.0.1:36077
+1500124687642	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500124691948	Marionette	INFO	Listening on port 46447
+1500124692072	Marionette	WARN	TLS certificate errors will be ignored for this session
