@@ -84,6 +84,7 @@ def get_max_score(record):
 #worker function
 def play_2048(db_password,retry=1):
     #check db connection
+    print("executor init ... OK")
     import pymysql
     try:
         connection=pymysql.connect(host="192.168.1.188",user="yewenhe0904",passwd=db_password,db='a2048')
