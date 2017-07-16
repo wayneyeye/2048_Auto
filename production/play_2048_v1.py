@@ -82,7 +82,7 @@ def get_max_score(record):
 
 
 #worker function
-def play_2048(db_password,retry=1):
+def play_2048(db_password,retry=2):
     #check db connection
     # print("executor init ... OK")
     try:
@@ -99,13 +99,12 @@ def play_2048(db_password,retry=1):
     from selenium.webdriver.common.keys import Keys
     import time,random,string
     import uuid
-    import threading
     print("Worker (PID=%s) Started" % os.getpid())
+    time.sleep(random.randint(1,5))
     keymap=(Keys.ARROW_UP,Keys.ARROW_DOWN,Keys.ARROW_LEFT,Keys.ARROW_RIGHT)
     driver = webdriver.PhantomJS() #install phantomjs
     driver.get("https://wayneyeye.github.io/2048/")
     elem = driver.find_element_by_class_name('game-container')
-    retry=1
     # try
     for i in range(retry):
         print("Worker (PID=%s) in Round %s" % (os.getpid(),i+1))
@@ -123,11 +122,10 @@ def play_2048(db_password,retry=1):
             step_detail["gamestart"]=starttime
             step_detail["uuid"]=uuid.uuid1().hex
             submit_step(step_detail,record)
-        game_retry(driver)
         print("Worker (PID=%s) Round %s Submitting Scores" % (os.getpid(),i+1))
-        record[-1]
         print("Worker (PID=%s) Round %s Highest Score: %s" % (os.getpid(),i+1,get_max_score(record)))
         submit_record_sql(record,db_password)
+        game_retry(driver)
     driver.close()
     print("Worker (PID=%s) Closed" % os.getpid())
 
@@ -145,10 +143,11 @@ if __name__ == '__main__':
     if worker_n>1:    
         for i in range(worker_n):
             worker_retrys.append(int(input("Retry for Worker %s?" %i)))   
+        print(worker_retrys)
         with concurrent.futures.ProcessPoolExecutor(worker_n+2) as executor:
             # print("executor ... OK")
             for retry_n in worker_retrys:
                 # print("executor %s ... OK" % retry_n)
-                executor.submit(play_2048,password,{'retry':retry_n})
+                executor.submit(play_2048,password,retry_n)
     else:
         play_2048(password)
