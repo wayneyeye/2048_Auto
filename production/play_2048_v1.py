@@ -140,10 +140,13 @@ if __name__ == '__main__':
     password=getpass.getpass("DB password? ")
     worker_n=int(input("Number of Workers?"))
     worker_retrys=[]
-    for i in range(worker_n):
-        worker_retrys.append(int(input("Retry for Worker %s?" %i)))   
-    with concurrent.futures.ProcessPoolExecutor(worker_n+2) as executor:
-        # print("executor ... OK")
-        for retry_n in worker_retrys:
-            # print("executor %s ... OK" % retry_n)
-            executor.submit(play_2048,password,{'retry':retry_n})
+    if worker_n>1:    
+        for i in range(worker_n):
+            worker_retrys.append(int(input("Retry for Worker %s?" %i)))   
+        with concurrent.futures.ProcessPoolExecutor(worker_n+2) as executor:
+            # print("executor ... OK")
+            for retry_n in worker_retrys:
+                # print("executor %s ... OK" % retry_n)
+                executor.submit(play_2048,password,{'retry':retry_n})
+    else:
+        play_2048(password)
