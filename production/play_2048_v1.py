@@ -91,8 +91,10 @@ def play_2048(db_password,retry=1):
     except:
         print("Problems in DB Connection!\nQuit...")
         sys.exit(1)
+    finally:
+        connection.close()   
     #open selenium  
-    print("Connection to Mysql DB ... OK")
+    print("Worker (PID=%s) Connection to Mysql DB ... OK" % os.getpid())
     from selenium import webdriver #install selenium
     from selenium.webdriver.common.keys import Keys
     import time,random,string
