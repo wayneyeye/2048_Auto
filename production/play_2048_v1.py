@@ -84,15 +84,15 @@ def get_max_score(record):
 #worker function
 def play_2048(db_password,retry=1):
     #check db connection
-    print("executor init ... OK")
-    import pymysql
+    # print("executor init ... OK")
     try:
+        import pymysql
         connection=pymysql.connect(host="192.168.1.188",user="yewenhe0904",passwd=db_password,db='a2048')
     except:
         print("Problems in DB Connection!\nQuit...")
         sys.exit(1)
     #open selenium  
-    print("connection to db ... ok")
+    print("Connection to Mysql DB ... OK")
     from selenium import webdriver #install selenium
     from selenium.webdriver.common.keys import Keys
     import time,random,string
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     for i in range(worker_n):
         worker_retrys.append(int(input("Retry for Worker %s?" %i)))   
     with concurrent.futures.ProcessPoolExecutor(worker_n+2) as executor:
-        print("executor ... OK")
+        # print("executor ... OK")
         for retry_n in worker_retrys:
-            print("executor %s ... OK" % retry_n)
+            # print("executor %s ... OK" % retry_n)
             executor.submit(play_2048,password,{'retry':retry_n})
