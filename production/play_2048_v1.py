@@ -91,6 +91,7 @@ def play_2048(db_password,retry=1):
         print("Problems in DB Connection!\nQuit...")
         sys.exit(1)
     #open selenium  
+    print("connection to db ... ok")
     from selenium import webdriver #install selenium
     from selenium.webdriver.common.keys import Keys
     import time,random,string
@@ -141,5 +142,7 @@ if __name__ == '__main__':
     for i in range(worker_n):
         worker_retrys.append(int(input("Retry for Worker %s?" %i)))   
     with concurrent.futures.ProcessPoolExecutor(worker_n+2) as executor:
+        print("executor ... OK")
         for retry_n in worker_retrys:
+            print("executor %s ... OK" % retry_n)
             executor.submit(play_2048,password,{'retry':retry_n})
