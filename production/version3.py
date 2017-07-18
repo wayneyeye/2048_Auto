@@ -74,7 +74,7 @@ keymap={'up':Keys.ARROW_UP,
 driver = webdriver.Firefox()
 driver.get("https://wayneyeye.github.io/2048/")
 
-dep=input("depth?")
+dep=int(input("depth?"))
 
 while game_over(driver):
     driver_s = webdriver.PhantomJS()

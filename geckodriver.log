@@ -1095,3 +1095,14 @@ Full stack:
 *************************
 1500352195999	Marionette	INFO	Ceased listening
 1500352360173	Marionette	INFO	Ceased listening
+1500352574712	geckodriver	INFO	geckodriver 0.18.0
+1500352574723	geckodriver	INFO	Listening on 127.0.0.1:33133
+1500352575962	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500352581676	Marionette	INFO	Listening on port 37691
+1500352581799	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500352655360	geckodriver	INFO	geckodriver 0.18.0
+1500352655363	geckodriver	INFO	Listening on 127.0.0.1:53551
+1500352656509	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500352659124	Marionette	INFO	Listening on port 43331
+1500352659233	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500352661272	Marionette	INFO	Ceased listening
