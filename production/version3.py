@@ -64,7 +64,11 @@ def shadow_and_try(driver_s,gameState,try_score,depth=1):
             continue
         try_score['Max']=max(shadow_and_try(driver_s,gameState2,try_score[move],depth=depth-1),try_score['Max'])
     return try_score['Max']
-
+def predit_next_move(try_score):
+    ranklist=[]
+    for move in ['up','down','left','right']:
+        ranklist.append((move,try_score[move]['Max']))
+    return sorted(ranklist, key=lambda movement: movement[1],reverse=True)
 
 
 keymap={'up':Keys.ARROW_UP,
