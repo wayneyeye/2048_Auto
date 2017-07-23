@@ -1184,3 +1184,36 @@ Full stack:
 1500846512829	Marionette	INFO	Listening on port 42961
 1500846512905	Marionette	WARN	TLS certificate errors will be ignored for this session
 1500846593141	Marionette	INFO	Ceased listening
+1500847635860	geckodriver	INFO	geckodriver 0.18.0
+1500847635900	geckodriver	INFO	Listening on 127.0.0.1:47457
+1500847636999	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500847640178	Marionette	INFO	Listening on port 45499
+1500847640265	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500847767719	geckodriver	INFO	geckodriver 0.18.0
+1500847767722	geckodriver	INFO	Listening on 127.0.0.1:37479
+1500847768813	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500847770803	Marionette	INFO	Listening on port 41717
+1500847770893	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500848006459	Marionette	INFO	Ceased listening
+1500848039747	geckodriver	INFO	geckodriver 0.18.0
+1500848039750	geckodriver	INFO	Listening on 127.0.0.1:45821
+1500848040834	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500848042570	Marionette	INFO	Listening on port 45591
+1500848042691	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500848114309	geckodriver	INFO	geckodriver 0.18.0
+1500848114311	geckodriver	INFO	Listening on 127.0.0.1:40343
+1500848115403	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500848117451	Marionette	INFO	Listening on port 45707
+1500848117550	Marionette	WARN	TLS certificate errors will be ignored for this session
+1500848370283	Marionette	INFO	Ceased listening
+1500848384802	geckodriver	INFO	geckodriver 0.18.0
+1500848384805	geckodriver	INFO	Listening on 127.0.0.1:45103
+1500848385899	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1500848387971	Marionette	INFO	Listening on port 46083
+1500848388057	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************

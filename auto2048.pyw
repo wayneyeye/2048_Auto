@@ -248,7 +248,7 @@ class GridView:
         df.columns=['max','min']
         return df
         
-def genInsStream(depth=5,probe=10,rep=5):
+def genInsStream(depth=4,probe=0,rep=3):
     instructionStream=[]
     instructionStreamT=[]
     instructionHead=[]
@@ -289,7 +289,7 @@ while True:
     a=GridView()
     a.initGame()
     a.setGame_json(gamestate)
-    df=(a.probeGame(genInsStream(4,0,5),gamestate))
+    df=(a.probeGame(genInsStream(4,0,2),gamestate))
     next_move=df['max'].idxmax()
     driver.find_element_by_class_name('container').send_keys(keymap[next_move])
     
